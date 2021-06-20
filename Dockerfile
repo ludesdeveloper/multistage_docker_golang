@@ -5,7 +5,7 @@ WORKDIR $GOPATH/src/mypackage/myapp/
 # Tambahan ENV penting, karena bila tidak ditambahkan, binary tidak jalan pada saat running di scratch
 ENV CGO_ENABLED=0
 COPY . .
-# Melakukan instalasi terhadap library yang kita gunakan, yaitu gin gonic
+# Melakukan instalasi terhadap library yang kita gunakan
 RUN go get -d -v
 RUN go build -o /go/bin/main
 # Step 2, meletakkan binary file diatas scratch
