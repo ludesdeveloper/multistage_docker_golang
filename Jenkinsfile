@@ -23,7 +23,8 @@ spec:
       checkout scm 
       container('docker') {
         echo "This is from GitHub"
-        sh "ls"
+        sh "docker build -t ${image} ."
+        sh "docker images -a"
       }
     }
   }
