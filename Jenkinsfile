@@ -36,7 +36,7 @@ spec:
         sh "docker rm ${image}"
         sh "docker rmi ${image}"
         sh "docker images -a"
-        sh "docker system prune"
+        sh "docker system prune --force"
         sh "docker images -a"
       }
     }
