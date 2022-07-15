@@ -22,22 +22,8 @@ spec:
     stage('Build Docker image') {
       checkout scm 
       container('docker') {
-        sh "docker build -t ${image} ."
-        sh "docker images -a"
-        try {
-          sh "docker run --name app -d -p 5000:5000 ${image}"
-        } catch (err) {
-          echo "Failed: ${err}"
-          sh "docker stop ${image}"
-          sh "docker rm ${image}"
-        }
-        sh "docker ps -a"
-        sh "docker stop ${image}"
-        sh "docker rm ${image}"
-        sh "docker rmi ${image}"
-        sh "docker images -a"
-        sh "docker system prune --force"
-        sh "docker images -a"
+        sh "This is from GitHub"
+        sh "ls"
       }
     }
   }
