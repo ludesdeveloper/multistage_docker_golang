@@ -23,6 +23,13 @@ spec:
       checkout scm 
       container('docker') {
         sh "docker build -t ${image} ."
+        sh "docker images -a"
+        sh "docker run --name app -d -p 5000:5000 ${image}"
+        sh "docker ps -a"
+        sh "curl 0.0.0.0:5000"
+        sh "docker stop ${image}"
+        sh "docker rm ${image}"
+        sh "docker rmi ${image}"
       }
     }
   }
