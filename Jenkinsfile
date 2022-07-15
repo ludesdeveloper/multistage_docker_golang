@@ -32,7 +32,6 @@ spec:
           sh "docker rm ${image}"
         }
         sh "docker ps -a"
-        sh "curl 0.0.0.0:5000"
         sh "docker stop ${image}"
         sh "docker rm ${image}"
         sh "docker rmi ${image}"
