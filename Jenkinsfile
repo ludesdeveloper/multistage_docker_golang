@@ -22,7 +22,7 @@ spec:
     stage('Build Docker image') {
       checkout scm 
       container('docker') {
-        sh "This is from GitHub"
+        echo "This is from GitHub"
         sh "ls"
       }
     }
